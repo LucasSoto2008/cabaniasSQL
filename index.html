@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cabañas SQL - San Martín de los Andes</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-overlay">
+        <div class="container">
+          <div class="header-content">
+            <h1 class="logo">Cabañas SQL</h1>
+            <nav class="nav">
+              <ul class="nav-list">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#cabanas">Cabañas</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Presentación -->
+      <section id="inicio" class="presentation">
+        <div class="container">
+          <div class="presentation-content">
+            <div class="presentation-text">
+              <h2>Bienvenidos a Cabañas SQL</h2>
+              <p>
+                Descubre la magia de la Patagonia Argentina en nuestras
+                acogedoras cabañas ubicadas en San Martín de los Andes. Rodeadas
+                de bosques nativos y con vista al lago, nuestras cabañas ofrecen
+                el refugio perfecto para una experiencia única en contacto con
+                la naturaleza.
+              </p>
+              <p>
+                Disfruta de la tranquilidad del bosque, la belleza del lago
+                Lácar y todas las actividades que ofrece esta hermosa región
+                patagónica. Cada cabaña está equipada con todas las comodidades
+                para hacer de tu estadía una experiencia inolvidable.
+              </p>
+            </div>
+            <div class="presentation-image">
+              <img
+                src="public/sanmartindelosandespanoramica.jpg"
+                alt="Vista panorámica de las cabañas con el lago de fondo"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mapa -->
+      <section id="ubicacion" class="map-section">
+        <div class="container">
+          <h2>Nuestra Ubicación</h2>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.8947!2d-71.3533!3d-40.1573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961a7b1520c860e5%3A0x8210b6b7b5b7b5b7!2sSan%20Mart%C3%ADn%20de%20los%20Andes%2C%20Neuqu%C3%A9n%2C%20Argentina!5e0!3m2!1ses!2sar!4v1234567890123!5m2!1ses!2sar"
+              width="100%"
+              height="400"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cabañas -->
+      <section id="cabanas" class="cabins-section">
+        <div class="container">
+          <h2>Nuestras Cabañas</h2>
+          <div class="cabins-grid">
+            <!-- Cabaña 1 -->
+            <div class="cabin-card">
+              <div class="cabin-image">
+                <img
+                  src="public/fachada-de-posada-quinen.jpg"
+                  alt="Cabaña del Bosque"
+                />
+              </div>
+              <div class="cabin-content">
+                <h3>Cabaña del Bosque</h3>
+                <p>
+                  Acogedora cabaña de madera rodeada de lengas y coihues.
+                  Capacidad para 4 personas, con chimenea, cocina completa y
+                  deck privado con vista al bosque nativo.
+                </p>
+                <button
+                  class="btn-primary"
+                  onclick="verMasCabana('Cabaña del Bosque')"
+                >
+                  Ver más
+                </button>
+              </div>
+            </div>
+
+            <!-- Cabaña 2 -->
+            <div class="cabin-card">
+              <div class="cabin-image">
+                <img src="public/lugarsoñadosma.jpg" alt="Cabaña Vista Lago" />
+              </div>
+              <div class="cabin-content">
+                <h3>Cabaña Vista Lago</h3>
+                <p>
+                  Cabaña premium con vista panorámica al Lago Lácar. Capacidad
+                  para 6 personas, jacuzzi privado, amplio living y terraza con
+                  parrilla frente al lago.
+                </p>
+                <button
+                  class="btn-primary"
+                  onclick="verMasCabana('Cabaña Vista Lago')"
+                >
+                  Ver más
+                </button>
+              </div>
+            </div>
+
+            <!-- Cabaña 3 -->
+            <div class="cabin-card">
+              <div class="cabin-image">
+                <img src="public/cabaña.jpg" alt="Cabaña Familiar" />
+              </div>
+              <div class="cabin-content">
+                <h3>Cabaña Familiar</h3>
+                <p>
+                  Espaciosa cabaña ideal para familias numerosas. Capacidad para
+                  8 personas, 3 dormitorios, 2 baños, sala de juegos y amplio
+                  jardín con juegos infantiles.
+                </p>
+                <button
+                  class="btn-primary"
+                  onclick="verMasCabana('Cabaña Familiar')"
+                >
+                  Consultar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contacto" class="footer">
+      <div class="container">
+        <h2>Consulta de Disponibilidad</h2>
+        <form
+          class="availability-form"
+          onsubmit="consultarDisponibilidad(event)"
+        >
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fechaIngreso">Fecha de Ingreso:</label>
+              <input
+                type="date"
+                id="fechaIngreso"
+                name="fechaIngreso"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="fechaSalida">Fecha de Salida:</label>
+              <input type="date" id="fechaSalida" name="fechaSalida" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="mayores">Cantidad de Mayores:</label>
+              <input
+                type="number"
+                id="mayores"
+                name="mayores"
+                min="1"
+                max="10"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="menores">Cantidad de Menores:</label>
+              <input
+                type="number"
+                id="menores"
+                name="menores"
+                min="0"
+                max="8"
+                value="0"
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombreCompleto">Nombre Completo:</label>
+              <input
+                type="text"
+                id="nombreCompleto"
+                name="nombreCompleto"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono:</label>
+              <input type="tel" id="telefono" name="telefono" required />
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group full-width">
+            <label for="mensaje">Mensaje Personalizado:</label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              rows="4"
+              placeholder="Cuéntanos sobre tus preferencias, necesidades especiales o cualquier consulta adicional..."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Consultar</button>
+        </form>
+      </div>
+    </footer>
+
+    <!-- Sección Final -->
+    <section class="final-section">
+      <div class="container">
+        <div class="final-content">
+          <div class="final-logo">
+            <picture
+              ><img
+                src="public/imagen-removebg-preview.png"
+                alt="logo de cabañas SQL"
+                width="300"
+            /></picture>
+            <p>San Martín de los Andes, Patagonia Argentina</p>
+          </div>
+          <div class="final-contact">
+            <div class="contact-item">
+              <span class="contact-icon">📧</span>
+              <span>info@cabanassql.com.ar</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📱</span>
+              <span>+54 9 2944 954028</span>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>
+            &copy; 2025 Cabañas SQL. Todos los derechos reservados. Desarrollado
+            por <strong>Lucas Soto</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script src="main.js"></script>
+  </body>
+</html>
